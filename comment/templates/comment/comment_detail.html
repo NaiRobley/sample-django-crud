@@ -1,0 +1,17 @@
+{% extends 'comment/base.html' %}
+
+{% block title %}
+    Comment Details
+{% endblock %}
+
+{% block content %}
+    <h2> {{ object.title }}</h2>
+
+    <p><em> by {{ object.author }}</em></p>
+    <p>{{ object.text }}</p>
+
+    <a href="{% url 'comment_edit' object.pk %}"> Edit comment </a> |
+    <a href="{% url 'comment_delete' object.pk %}"> Delete Comment </a> |
+    <a href="{% url 'comment_list' %}"> Home </a>
+
+{% endblock %}

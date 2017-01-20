@@ -1,0 +1,16 @@
+{% extends 'comment/base.html' %}
+
+{% block title %}
+    Confirm Delete?
+{% endblock %}
+
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        <p>Are you sure you want to delete {{ object.title }} ? </p>
+        <input type="submit" value="Yes"/>
+        <a href="{% url 'comment_list' %}">No</a>
+    </form>
+
+
+{% endblock %}
